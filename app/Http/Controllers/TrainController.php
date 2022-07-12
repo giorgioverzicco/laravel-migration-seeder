@@ -13,6 +13,7 @@ class TrainController extends Controller
         $endDate = date('Y-m-d 23:59:59');
 
         $trains = Train::whereBetween('departure_time', [$startDate, $endDate])
+            ->orderBy('departure_time')
             ->get();
 
         dd($trains);
