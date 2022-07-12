@@ -22,8 +22,8 @@ class CreateTrainsTable extends Migration
             $table->dateTime('arrival_time');
             $table->unsignedSmallInteger('code');
             $table->unsignedTinyInteger('carriages');
-            $table->boolean('is_late');
-            $table->boolean('is_cancelled');
+            $table->boolean('is_late')->default(false);
+            $table->boolean('is_cancelled')->default(false);
             $table->timestamps();
         });
     }
